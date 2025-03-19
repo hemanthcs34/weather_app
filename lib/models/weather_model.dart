@@ -1,4 +1,4 @@
-class weather {
+class Weather {
   final String cityName;
   final double temperature;
   final String description;
@@ -7,7 +7,7 @@ class weather {
   final int sunrise;
   final int sunset;
 
-  weather({
+  Weather({
     required this.cityName,
     required this.temperature,
     required this.description,
@@ -17,11 +17,10 @@ class weather {
     required this.sunset,
   });
 
-
-  factory weather.fromJson(Map<String, dynamic> json) {
-    return weather(
+  factory Weather.fromJson(Map<String, dynamic> json) {
+    return Weather(
       cityName: json['name'],
-      temperature: json['main']['temp'] -273.15,
+      temperature: json['main']['temp'] - 273.15,
       description: json['weather']['description'],
       humidity: json['main']['humidity'],
       windSpeed: json['wind']['speed'].toDouble(),

@@ -16,7 +16,7 @@ final WeatherServices _weatherServices = WeatherServices();
 final TextEditingController _Controller = TextEditingController();
 bool _isLoading = false;
 
-weather? _weather;
+Weather? _weather;
 
 void _getWeather() async {
   setState(() {
@@ -99,6 +99,11 @@ try{
                                         borderRadius: BorderRadius.all(Radius.circular(10)),
                                     ),
                                 ),
+                            ),
+                            const SizedBox(height: 20),
+                            ElevatedButton(
+                                onPressed: _getWeather,
+                                child: const Text('Get Weather'),
                             ),
                         ],
                     ),
